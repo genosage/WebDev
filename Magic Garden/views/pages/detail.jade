@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-6
+        embed(src="#{ticket.video}", allowFullScreen="true", quality="high", width="640", height="480", align="middle", type="application/x-shockwave-flash")
+      .col-md-5
+        dl.dl-horizontal
+          dt Ticket Title
+          dd= ticket.title
+          dt Attraction
+          dd= ticket.attraction
+          dt Ticket Type
+          dd= ticket.type
+          dt Ticket Price
+          dd= ticket.price
+          dt Address
+          dd= ticket.address
+          dt Description
+          dd= ticket.description

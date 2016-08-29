@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      table.table.table-hover.table-bordered
+        thead
+          tr
+            th Ticket Title
+            th Attraction
+            th Ticket Type
+            th Ticket Price
+            //- th Create Time
+            th View
+            th Update
+            th Delete
+        tbody
+          each item in tickets
+            tr(class="item-id-#{item._id}")
+              td #{item.title}
+              td #{item.attraction}
+              td #{item.type}
+              td #{item.price}
+              //- td #{moment(item.meta.createdAT).format('MM/DD/YYYY')}
+              td
+                a(target="_blank",href="../detail/#{item._id}") View
+              td
+                a(target="_blank",href="../admin/update/#{item._id}") Update
+              td
+                button.btn.btn-danger.del(type="button",data-id="#{item._id}") Delete
