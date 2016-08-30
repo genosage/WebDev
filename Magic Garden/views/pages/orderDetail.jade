@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      form.form-horizontal(method="post", action="/admin/order/new")
+        .form-group
+          label.col-sm-2.control-label(for="inputOrderType") Ticket Type
+          .col-sm-6
+            input#inputOrderType.form-control(type="text",name="order[type]",value="#{order.type}")
+        .form-group
+          label.col-sm-2.control-label(for="inputOrderNum") Ticket Number
+          .col-sm-6
+            input#inputOrderNum.form-control(type="text",name="order[num]",value="#{order.num}")
+        .form-group
+          label.col-sm-2.control-label(for="inputOrderEmail") Email
+          .col-sm-6
+            input#inputOrderEmail.form-control(type="text",name="order[email]",value="#{order.email}")
+        .form-group
+          .col-sm-8
+           dl.dl-horizontal
+            dt Order Title
+            dd= ticket.title
+        .form-group
+          .col-sm-offset-6.col-sm-6
+            button.btn.btn-default(type="submit") Submit
